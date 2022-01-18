@@ -22,10 +22,10 @@ public class CardDeliveryTest {
     @Test
     void shouldSendCorrectForm() {
         String orderDate = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-        $("[data-test-id='city'] input").setValue("Вологда");
-        $(byText("Вологда")).click();
+        $("[data-test-id='city'] input").setValue("Смоленск");
+        $(byText("Смоленск")).click();
         $("[data-test-id=date] input").doubleClick().sendKeys(orderDate);
-        $("[data-test-id=name] input").setValue("Иванов Иван");
+        $("[data-test-id=name] input").setValue("Кирилов Дмитрий");
         $("[data-test-id=phone] input").setValue("+79990009900");
         $(".checkbox__box").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -41,7 +41,7 @@ public class CardDeliveryTest {
     @Test
     void shouldSendFormWithIncorrectCity() {
         String orderDate = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-        $("[data-test-id='city'] input").setValue("Копенгаген");
+        $("[data-test-id='city'] input").setValue("Берлин");
         $("[data-test-id=date] input").doubleClick().sendKeys(orderDate);
         $("[data-test-id=name] input").setValue("Федотов Иван");
         $("[data-test-id=phone] input").setValue("+79998889900");
@@ -52,10 +52,10 @@ public class CardDeliveryTest {
     @Test
     void shouldSendFormWithIncorrectDate() {
         String orderDate = LocalDate.now().plusDays(2).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-        $("[data-test-id='city'] input").setValue("Вологда");
-        $(byText("Вологда")).click();
+        $("[data-test-id='city'] input").setValue("Смоленск");
+        $(byText("Смоленск")).click();
         $("[data-test-id=date] input").doubleClick().sendKeys(orderDate);
-        $("[data-test-id=name] input").setValue("Иванов Иван");
+        $("[data-test-id=name] input").setValue("Кирилов Дмитрий");
         $("[data-test-id=phone] input").setValue("+79998889900");
         $(".checkbox__box").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -64,8 +64,8 @@ public class CardDeliveryTest {
     @Test
     void shouldSendFormWithIncorrectName() {
         String orderDate = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-        $("[data-test-id='city'] input").setValue("Вологда");
-        $(byText("Вологда")).click();
+        $("[data-test-id='city'] input").setValue("Смоленск");
+        $(byText("Смоленск")).click();
         $("[data-test-id=date] input").doubleClick().sendKeys(orderDate);
         $("[data-test-id=name] input").setValue("Ivanov");
         $("[data-test-id=phone] input").setValue("+79998889900");
@@ -77,10 +77,10 @@ public class CardDeliveryTest {
     @Test
     void shouldSendFormWithIncorrectPhone() {
         String orderDate = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-        $("[data-test-id='city'] input").setValue("Вологда");
-        $(byText("Вологда")).click();
+        $("[data-test-id='city'] input").setValue("Смоленск");
+        $(byText("Смоленск")).click();
         $("[data-test-id=date] input").doubleClick().sendKeys(orderDate);
-        $("[data-test-id=name] input").setValue("Иванов Иван");
+        $("[data-test-id=name] input").setValue("Кирилов Дмитрий");
         $("[data-test-id=phone] input").setValue("79998889900");
         $(".checkbox__box").click();
         $$("button").find(exactText("Забронировать")).click();
@@ -90,10 +90,10 @@ public class CardDeliveryTest {
     @Test
     void shouldSendFormWithoutAgreement() {
         String orderDate = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-        $("[data-test-id='city'] input").setValue("Вологда");
-        $(byText("Вологда")).click();
+        $("[data-test-id='city'] input").setValue("Смоленск");
+        $(byText("Смоленск")).click();
         $("[data-test-id=date] input").doubleClick().sendKeys(orderDate);
-        $("[data-test-id=name] input").setValue("Иванов Иван");
+        $("[data-test-id=name] input").setValue("Кирилов Дмитрий");
         $("[data-test-id=phone] input").setValue("+79998889900");
         $$("button").find(exactText("Забронировать")).click();
         $(".input_invalid .checkbox__text").shouldHave(text("Я соглашаюсь с условиями обработки и использования моих персональных данных"));
